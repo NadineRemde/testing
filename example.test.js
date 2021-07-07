@@ -14,12 +14,6 @@ const {
     })
   });
 
-  describe('Tests dash with capital letter', () => {
-    test('Dash removed with capital letter', () => {
-        expect(camelCaseConverter('_test_test_test_test')).toBe('testTestTestTest');    
-    })
-  });
-
   describe('Tests dash removed between several words', () => {
     test('Dash removed between several words', () => {
         expect(camelCaseConverter('_test_test_test_test')).toBe('testTestTestTest');    
@@ -71,6 +65,18 @@ const {
   describe('Tests if a camelCase returns as camelCase', () => {
     test('camelCase returns as camelCase', () => {
         expect(camelCaseConverter('testTest')).toBe('testTest');    
+    })
+  });
+
+  describe('Tests if numbers removed between two words', () => {
+    test('numbers removed between words', () => {
+        expect(camelCaseConverter('test2test0test')).toBe('testTestTest');    
+    })
+  });
+
+  describe('Tests if special characters removed between two words', () => {
+    test('special characters removed between words', () => {
+        expect(camelCaseConverter('test%test#test')).toBe('testTestTest');    
     })
   });
 
