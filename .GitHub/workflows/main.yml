@@ -1,0 +1,12 @@
+name: My First Simple Workflow
+on: push
+
+jobs:
+  build:
+    name: My First Simple Workflow
+    runs-on: ubuntu-latest    
+    steps:
+    - uses: actions/checkout@v1
+      env:
+        MY_NAME: "Groovy Gorilla"
+        TOKEN: ${{secrets.MY_SUPER_SECRET_STORED_KEY}}
